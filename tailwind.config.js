@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        ubuntu: ["UBUNTU", "regular"],
+        roboto: ["roboto"],
       },
     },
   },
