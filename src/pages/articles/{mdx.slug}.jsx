@@ -1,39 +1,48 @@
 import * as React from 'react'
-import { StaticQuery, graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 // Update Markdown files that include HTML code
 // https://www.gatsbyjs.com/docs/how-to/routing/migrate-remark-to-mdx/
 
 
-const ArticlesWhatever = ({ data }) => {
+const ShowArticles = ({ data, children}) => {
   return (
-    <div>test</div>
+    <div>{
+            data.allMdx.nodes.map(node =>(
+                <article key={node.id}>
+                        {node.frontmatter.title}
+                        <MDXRenderer>
+                        {node.body}
+                        </MDXRenderer>
+                </article>
+            ))
+        }
+        </div>
   )
 }
 
 
-export const ComponentName = () => (
-  <StaticQuery
-    query={graphql`
-      {
-        allMdx(sort: {order: DESC, fields: frontmatter___date}) {
-          edges {
-            node {
-              frontmatter {
-                title
-                date(formatString: "DD-MM-YYYY")
-                hero_image
-              }
-              id
-            }
-          }
-        }
-      }
-    `}
-    render={data => <pre>{JSON.stringify(data, null, 4)}</pre>}
-  ></StaticQuery>
-)
+// const ComponentName = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
 
-export default ArticlesWhatever
+export const query = graphql`
+  {
+    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+      nodes {
+        id
+        frontmatter {
+          title
+          date(formatString: "DD-MM-YYYY")
+          hero_image
+          hero_image_alt
+          hero_image_credit_link
+          hero_image_credit_text
+        }
+        body
+      }
+    }
+  }
+`
+
+export default ShowArticles
 
