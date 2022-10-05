@@ -53,6 +53,9 @@ Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cl
 
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal) -->
 
+
+[![guillnfs-banner.jpg](https://i.postimg.cc/zfFBgsVb/guillnfs-banner.jpg)](https://postimg.cc/v1DbRS7b)
+
 # My own website, number three technically...
 
 Under the hood changes
@@ -65,12 +68,13 @@ Sincerely,
 
 Guillermo
 
+---
 
 ## Todo
 
 - SEO every article it's social media "photo" and slug.
 - index page SEO.
-- Design.
+- Consistent and good design. (whatever that may be Guillermo knows it)
 - MDX Code blocks.
 - webp and webm support.
 - Video editing Need For Speed, WRC1, Grid Autosport, Valorant and more.
@@ -78,6 +82,10 @@ Guillermo
 - Darkmode Gradually gradient?
 - Themeable options (easy themes)?
 - Ads?
+- Comments and technical explanations
+- Style guide (follow it Guillermo)
+
+---
 
 ## Notes
 
@@ -95,10 +103,10 @@ http://localhost:8000/___graphql?query=query%20MyQuery%20%7B%0A%20%20allMdx(sort
 ```
 
 https://mdxjs.com/
+
 https://www.gatsbyjs.com/docs/how-to/routing/mdx/
 
-
-
+---
 
 ## Some issues that I had:
 
