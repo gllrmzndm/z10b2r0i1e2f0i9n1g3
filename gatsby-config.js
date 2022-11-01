@@ -22,10 +22,10 @@ module.exports = {
     }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
       resolve: 'gatsby-source-filesystem',
       options: {
-        "name": "articles",
-        "path": `${__dirname}/src/pages/articles`
+        "name": "blog",
+        "path": `${__dirname}/src/pages`
       },
-      __key: "articles"
+      __key: "blog"
     },
   ]
 };

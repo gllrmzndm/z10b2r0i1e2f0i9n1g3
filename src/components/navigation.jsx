@@ -8,7 +8,7 @@ const Navbar = () => {
                 <ul className="hidden sm:flex items-center lg:justify-between space-x-10 mx-20 border-2 border-blue-600">
                     <li className="py-2 text-black hover:bg-orange-600 hover:text-white"><Link to="/">Guillermo Zaandam</Link></li>
                     {/* <li className="py-2 "><Link to="/">About me</Link></li> */}
-                    <li className="py-2"><Link to="/articles">Articles</Link></li>
+                    <li className="py-2"><Link to="/blog">blog</Link></li>
                     <li className="py-2"><Link to="/">Projects</Link></li>
                 </ul>
 
