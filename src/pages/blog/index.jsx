@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import ShowArticles from "../old.{mdx.slug}"
+import ShowArticles from "../{mdx.slug}"
 
 
 // This is link page that links to the corresponding ShowArticles(s)
