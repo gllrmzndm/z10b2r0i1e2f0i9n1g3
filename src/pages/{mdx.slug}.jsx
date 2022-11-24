@@ -7,43 +7,41 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 // https://www.gatsbyjs.com/docs/how-to/routing/migrate-remark-to-mdx/
 
 
-const BlogPost = ({ data, children }) => {
+const BlogPost = ({ data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
   return (
-    <div>
-    <GatsbyImage
-      image={image}
-      alt={data.mdx.frontmatter.hero_image_alt}
-    />
-    {children}
+    <div className="">
+      <div> pageTitle={data.mdx.frontmatter.title} </div>
+
+      <div>
+        <GatsbyImage className="w-full max-h-96"
+          image={image}
+          alt={data.mdx.frontmatter.hero_image_alt}
+        />
+        <div className="mx-8 lg:mx-40">
+          <p className="my-4">{data.mdx.frontmatter.date}</p>
+          <MDXRenderer>
+            {data.mdx.body}
+          </MDXRenderer>
+        </div>
+      </div>
     </div>
   )
 }
-
 export const query = graphql`
-  {
-    mdx {
-      id
+  query ($id: String) {
+    mdx(id: {eq: $id}) {
       frontmatter {
-        author
-        categories
-        date(formatString: "DD-MM-YYYY")
-        hero_image
-        hero_image_alt
         title
-        toc
-        image {
+        date(formatString: "DD-MM-YYYY")
+        hero_image {
           childImageSharp {
             gatsbyImageData
           }
         }
       }
-      wordCount {
-        words
-      }
       body
     }
   }
 `
-
 export default BlogPost

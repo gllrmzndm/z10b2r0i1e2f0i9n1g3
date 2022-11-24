@@ -19,7 +19,7 @@ module.exports = {
       options: {
         "icon": "src/images/icon.png"
       }
-    }, "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+    }, "gatsby-transformer-sharp", {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "blog",
@@ -27,5 +27,6 @@ module.exports = {
       },
       __key: "blog"
     }, "gatsby-plugin-mdx",
+    "gatsby-plugin-sharp",
   ],
 };
