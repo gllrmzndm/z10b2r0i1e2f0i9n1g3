@@ -14,9 +14,6 @@ const IndexPage = () => {
       <GatsbyConfigSeo title="Guillermo Zaandam" image={Banner2}></GatsbyConfigSeo>
       <Navbar></Navbar>
       <Hero></Hero>
-
-
-
     </div>
   )
 }
