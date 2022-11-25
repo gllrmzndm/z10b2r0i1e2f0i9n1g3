@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
@@ -7,40 +7,37 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 // https://www.gatsbyjs.com/docs/how-to/routing/migrate-remark-to-mdx/
 
 
-const BlogPost = ({ data }) => {
-  const image = getImage(data.mdx.frontmatter.hero_image)
-  return (
-    <div className="">
-      <div> pageTitle={data.mdx.frontmatter.title} </div>
+const BlogPost = ({ data, children }) => {
 
-      <div>
-        <GatsbyImage className="w-full max-h-96"
-          image={image}
-          alt={data.mdx.frontmatter.hero_image_alt}
-        />
-        <div className="mx-8 lg:mx-40">
-          <p className="my-4">{data.mdx.frontmatter.date}</p>
-          <MDXRenderer>
-            {data.mdx.body}
-          </MDXRenderer>
-        </div>
-      </div>
+  const image = getImage(data.mdx.frontmatter.hero_image)
+
+  return (
+    <div className="font-semibold">
+      <p>Posted: {data.mdx.frontmatter.date}</p>
+      <GatsbyImage image={image}
+      />
+      <MDXRenderer>
+        {data.mdx.body}
+      </MDXRenderer>
     </div>
   )
 }
+
 export const query = graphql`
-  query ($id: String) {
-    mdx(id: {eq: $id}) {
+  query {
+    mdx(id: {}) {
       frontmatter {
-        title
-        date(formatString: "DD-MM-YYYY")
-        hero_image {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
+        layout
+        author
+        image
+        featured
+        toc
+        date
+        hero_image
+        hero_image_alt
+        hero_image_credit_text
+        hero_image_credit_link
       }
-      body
     }
   }
 `

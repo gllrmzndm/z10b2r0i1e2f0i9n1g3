@@ -9,24 +9,32 @@ module.exports = {
     author: `@uhuh_guillermo`,
     twitterUsername: `@uhuh_guillermo`,
   },
-  plugins: ["gatsby-plugin-postcss", {
-    resolve: 'gatsby-plugin-google-analytics',
-    options: {
-      "trackingId": "G-YY7NKMXW1J"
-    }
-  }, "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
+  plugins: ["gatsby-plugin-postcss",
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        "trackingId": "G-YY7NKMXW1J"
+      }
+    },
+
+    "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
       resolve: 'gatsby-plugin-manifest',
       options: {
         "icon": "src/images/icon.png"
       }
-    }, "gatsby-transformer-sharp", {
-      resolve: 'gatsby-source-filesystem',
+    },
+
+    {
+      resolve: "gatsby-source-filesystem",
       options: {
-        "name": "blog",
-        "path": `${__dirname}/src/pages`
+        name: `blog`,
+        path: `${__dirname}/blog`,
       },
-      __key: "blog"
-    }, "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
+    },
   ],
 };
