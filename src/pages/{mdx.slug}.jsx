@@ -24,20 +24,18 @@ const BlogPost = ({ data, children }) => {
 }
 
 export const query = graphql`
-  query {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
-      nodes {
-        id
-        frontmatter {
-          title
-          date(formatString: "DD-MM-YYYY")
-          hero_image {
-            childrenImageSharp {
-              gatsbyImageData
-            }
+  query ($id: String) {
+    mdx(id: {eq: $id}) {
+      frontmatter {
+        title
+        date(formatString: "DD-MM-YYYY")
+        hero_image {
+          childImageSharp {
+            gatsbyImageData
           }
         }
       }
+      body
     }
   }
 `
