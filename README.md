@@ -113,11 +113,9 @@ GraphQL for mdx.slug.jsx
 This is what I'm using for rendering mdx: https://www.gatsbyjs.com/docs/how-to/querying-data/page-query/
 
 ```
-http://localhost:8000/___graphql?query=query%20MyQuery%20%7B%0A%20%20allMdx(sort%3A%20%7Bfields%3A%20frontmatter___date%2C%20order%3A%20DESC%7D)%20%7B%0A%20%20%20%20nodes%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20frontmatter%20%7B%0A%20%20%20%20%20%20%20%20title%0A%20%20%20%20%20%20%20%20date(formatString%3A%20%22DD-MM-YYYY%22)%0A%20%20%20%20%20%20%20%20hero_image%0A%20%20%20%20%20%20%20%20hero_image_alt%0A%20%20%20%20%20%20%20%20hero_image_credit_link%0A%20%20%20%20%20%20%20%20hero_image_credit_text%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20body%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&operationName=MyQuery&codeExporterIsOpen=true
+http://localhost:8000/___graphql?query=query%20MyQuery%20%7B%0A%20%20allMdx(sort%3A%20%7Bfields%3A%20frontmatter___date%2C%20order%3A%20DESC%7D)%20%7B%0A%20%20%20%20nodes%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20frontmatter%20%7B%0A%20%20%20%20%20%20%20%20title%0A%20%20%20%20%20%20%20%20date(formatString%3A%20%22DD-MM-YYYY%22)%0A%20%20%20%20%20%20%20%20hero_image%20%7B%0A%20%20%20%20%20%20%20%20%20%20childrenImageSharp%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20gatsbyImageData%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20body%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&operationName=MyQuery&codeExporterIsOpen=true
 ```
-```
-http://localhost:8000/___graphql?query=query%20MyQuery%20%7B%0A%20%20allMdx(sort%3A%20%7Border%3A%20DESC%2C%20fields%3A%20frontmatter___date%7D)%20%7B%0A%20%20%20%20nodes%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20frontmatter%20%7B%0A%20%20%20%20%20%20%20%20title%0A%20%20%20%20%20%20%20%20hero_image_alt%0A%20%20%20%20%20%20%20%20hero_image_credit_link%0A%20%20%20%20%20%20%20%20hero_image_credit_text%0A%20%20%20%20%20%20%20%20date(formatString%3A%20%22DD-MM-YYYY%22)%0A%20%20%20%20%20%20%20%20hero_image%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20body%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&operationName=MyQuery&codeExporterIsOpen=true
-```
+
 https://mdxjs.com/
 
 https://www.gatsbyjs.com/docs/how-to/routing/mdx/
